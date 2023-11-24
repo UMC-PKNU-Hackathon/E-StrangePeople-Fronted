@@ -76,10 +76,16 @@ export default function SearchResult() {
           <S.IconImage src={searchIcon} alt="Search" onClick={onClickBtn} />
         </S.ImageButton>
       </div>
+<<<<<<< HEAD
       <S.SearchResultText>"{location.search}"에 대한 검색결과입니다</S.SearchResultText>
       
       {/* 검색 결과를 표시하기 위해 Posts 컴포넌트를 렌더링 */}
       <Posts searchQuery={editableSearch} />
+=======
+      <S.SearchResultText>
+        "{decodeURIComponent(location.pathname.split('/').pop())}"에 대한 검색결과입니다
+      </S.SearchResultText>
+>>>>>>> forMerge1
     </S.AppContainer>
   );
 }

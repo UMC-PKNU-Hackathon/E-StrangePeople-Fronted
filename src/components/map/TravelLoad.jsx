@@ -1,6 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
+// import { fetchData } from "../../apis/api";
 
 function TravelLoad() {
+    // const [data, setData] = useState(null);
+
+    // useEffect(() => {
+    //   const fetchDataFromApi = async () => {
+    //     try {
+    //       const result = await fetchData();
+    //       setData(result);
+    //     } catch (error) {
+    //       // 에러 처리
+    //       console.error('Error fetching data in MyComponent:', error);
+    //     }
+    //   };
+  
+    //   fetchDataFromApi();
+    // }, []);
+
   useEffect(() => {
       
     const mapContainer = document.getElementById("map");
