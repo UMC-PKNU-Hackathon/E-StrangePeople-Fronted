@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const PostContainer = styled.div`
-  width: 50%;
+  z-index:1;
+  width: 100%;
   height: 100vh;
   padding: 10px;
   border-top-left-radius: 10px;
