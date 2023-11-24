@@ -4,10 +4,16 @@ import QuillEditor from './QuilEditor';
 
 export default function Post() {
     const [title, setTitle] = useState('');
-    const handleSave = () => {
-      // Add your save logic here (server)
-      console.log('Title:', title);
-     
+    const [content, setContent] = useState('');
+    
+  const handleContentChange = (htmlContent) => {
+    setContent(htmlContent);
+  };
+
+  const handleSave = () => {
+    // Add your save logic here (server)
+    console.log('Title:', title);
+    console.log('Content:', content);
   };
 
 
@@ -20,7 +26,7 @@ export default function Post() {
             />
             <S.Button onClick={handleSave}>저장하기</S.Button>
         </S.TitleContainer>    
-            <QuillEditor/>
+            <QuillEditor onContentChange={handleContentChange} />
     </S.PostContainer>
   )
 }

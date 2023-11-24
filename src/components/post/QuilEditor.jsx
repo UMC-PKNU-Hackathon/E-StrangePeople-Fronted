@@ -23,8 +23,7 @@ const QuillEditor = memo(({ quillRef, api, htmlContent, setHtmlContent }) => {
             if (!res.success) {
                 alert("이미지 업로드에 실패하였습니다.");
             }
-            //const url = res.payload.url;
-            const url = 'https://www.istockphoto.com/photo/happy-puppy-welsh-corgi-14-weeks-old-dog-winking-panting-and-sitting-isolated-on-gm1482199015-509248962?utm_source=pixabay&utm_medium=affiliate&utm_campaign=SRP_image_sponsored&utm_content=https%3A%2F%2Fpixabay.com%2Fko%2Fimages%2Fsearch%2F%25EA%25B0%2595%25EC%2595%2584%25EC%25A7%2580%2F&utm_term=%EA%B0%95%EC%95%84%EC%A7%80';
+            const url = res.payload.url;
             const quill = quillRef.current.getEditor();
             /* ReactQuill 노드에 대한 Ref가 있어야 메서드들을 호출할 수 있으므로
             useRef()로 ReactQuill에 ref를 걸어주자.

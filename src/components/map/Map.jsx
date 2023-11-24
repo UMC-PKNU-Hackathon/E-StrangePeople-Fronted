@@ -1,7 +1,7 @@
+//입력할떄
 import React, { useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
 
-const Map = () => {
+function Map() {
   const mapRef = useRef(null);
   const markers = [];
   const [searchedPlace, setSearchedPlace] = useState('');
@@ -42,6 +42,11 @@ const Map = () => {
         // 마커를 배열에 추가
         markers.push(marker);
       });
+
+      // 컴포넌트가 언마운트 될 때 이벤트 제거
+      return () => {
+        window.kakao.maps.event.clearListeners(map, 'click');
+      };
     };
 
     return () => {
@@ -52,7 +57,7 @@ const Map = () => {
   useEffect(() => {
     const map = mapRef.current;
 
-    if (map && searchedPlace) {
+    if (searchedPlace) {
       // 장소 검색 서비스 생성
       const ps = new window.kakao.maps.services.Places();
 
@@ -79,20 +84,16 @@ const Map = () => {
 
   return (
     <div>
+      <div>
         <input
           type="text"
           placeholder="장소를 검색하세요"
           onChange={(e) => setSearchedPlace(e.target.value)}
         />
-      <Box id="map" style={{ width: "780px", height: "875px" }}></Box>
+      </div>
+      <div id="map" style={{ width: '500px', height: '400px' }}></div>
     </div>
   );
-};
-const Box = styled.div `
-width: 100%;
-height: 100%;
-
-`
+}
 
 export default Map;
-
