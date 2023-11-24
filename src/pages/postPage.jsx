@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import postArticle from '../apis/api/article';
 
 export default function PostPage() {
+<<<<<<< HEAD
   const [articleData, setArticleData] = useState({
     RouteCreateRequests: [
       {
@@ -55,12 +56,24 @@ export default function PostPage() {
       console.error('Error posting article:', error);
       // Add error handling logic or provide user feedback
     }
+=======
+  const [coordinates, setCoordinates] = useState({ latitude: 0, longitude: 0 });
+
+  const handleCoordinatesUpdate = (newCoordinates) => {
+    console.log('좌표값이 업데이트되었습니다:', newCoordinates);
+    setCoordinates(newCoordinates);
+    
+>>>>>>> 33af846f7e9f0b7b2946c36ebcb51dae4a2cb56a
   };
 
   return (
     <PostBox>
       <Wrapper>
+<<<<<<< HEAD
         <Map updateAddress={updateAddress} />
+=======
+        <Map onCoordinatesUpdate={handleCoordinatesUpdate} />
+>>>>>>> 33af846f7e9f0b7b2946c36ebcb51dae4a2cb56a
       </Wrapper>
 
       <Container>
