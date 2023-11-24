@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import * as S from './search.style';
 import searchIcon from '../images/search.png';
 import ReadPost from '../components/post/ReadPost';
 import Map from '../components/map/Map';
@@ -22,7 +21,8 @@ export default function ReadPage() {
       .catch((error) => {
         console.error('Error fetching article detail:', error);
       });
-  }, []); // Empty dependency array to run the effect only once on mount
+  }, []);
+
   return (
     <PostBox>
       <Wrapper>

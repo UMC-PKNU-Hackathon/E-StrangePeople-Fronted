@@ -7,15 +7,16 @@ import styled from 'styled-components';
 import postArticle from '../apis/api/article';
 
 export default function PostPage() {
-<<<<<<< HEAD
+
   const [articleData, setArticleData] = useState({
     RouteCreateRequests: [
       {
         introId: 123456789,
-        address: '', // Will be updated by the Map component
-        content: '', // Will be updated by the Post component
-        transportation: '', // Will be updated by the Post component
-        expense: 0, // Will be updated by the Post component
+        x: '',
+        y: '', 
+        transportation: '',
+        content:'', 
+        expense: 0, 
       },
     ],
   });
@@ -50,30 +51,23 @@ export default function PostPage() {
   const handlePostArticle = async () => {
     try {
       const response = await postArticle(articleData);
-      console.log('Article posted successfully:', response);
-      // Add any additional logic or feedback for successful post
+      console.log('성공:', response);
     } catch (error) {
-      console.error('Error posting article:', error);
-      // Add error handling logic or provide user feedback
-    }
-=======
+      console.error('Error:', error);
+    }}
+
   const [coordinates, setCoordinates] = useState({ latitude: 0, longitude: 0 });
 
   const handleCoordinatesUpdate = (newCoordinates) => {
     console.log('좌표값이 업데이트되었습니다:', newCoordinates);
     setCoordinates(newCoordinates);
-    
->>>>>>> 33af846f7e9f0b7b2946c36ebcb51dae4a2cb56a
+  
   };
 
   return (
     <PostBox>
       <Wrapper>
-<<<<<<< HEAD
-        <Map updateAddress={updateAddress} />
-=======
         <Map onCoordinatesUpdate={handleCoordinatesUpdate} />
->>>>>>> 33af846f7e9f0b7b2946c36ebcb51dae4a2cb56a
       </Wrapper>
 
       <Container>

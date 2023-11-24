@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as S from './Post.style';
 import adressIcon from '../../images/pin.png';
 import costIcon from '../../images/wallet.png';
-
+import getArticleDetail from '../../apis/api/article'
 export default function ReadPost() {
   const [title, setTitle] = useState('제목입니다.');
   const [author, setAuthor] = useState('John Doe'); // 작성자
@@ -11,6 +11,9 @@ export default function ReadPost() {
   const [cost, setCost] = useState('4000');
   const [content, setContent] = useState('내용입니드어 즐거웟십니더');
 
+  // 사용 예시
+const articleId = 1; // 실제 게시글 ID로 교체하세요
+getArticleDetail(articleId);
   return (
     <S.PostContainer>
       <S.MetaContainer>
@@ -30,7 +33,6 @@ export default function ReadPost() {
         <S.Divider />
         <S.Content>{content}</S.Content>
       </S.ContentContainer>
-      <input/>
     </S.PostContainer>
   );
 }

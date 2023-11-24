@@ -1,11 +1,8 @@
 //입력할떄
 import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 
-<<<<<<< HEAD
-function Map() {
-=======
 const Map = ({ onCoordinatesUpdate }) => {
->>>>>>> 33af846f7e9f0b7b2946c36ebcb51dae4a2cb56a
   const mapRef = useRef(null);
   const markers = [];
   const [searchedPlace, setSearchedPlace] = useState([]);
@@ -13,7 +10,7 @@ const Map = ({ onCoordinatesUpdate }) => {
   useEffect(() => {
     const script = document.createElement('script');
     script.async = true;
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=4694ce49f0ef2e3c93a7af1b0c0267a7&autoload=false`;
+    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=5722bcd105e979cee362b58e0dbac3f4&autoload=false`;
     document.head.appendChild(script);
 
     script.onload = () => {
@@ -72,12 +69,9 @@ const Map = ({ onCoordinatesUpdate }) => {
   useEffect(() => {
     const map = mapRef.current;
 
-<<<<<<< HEAD
     if (searchedPlace) {
       // 장소 검색 서비스 생성
-=======
-    if (map && searchedPlace) {
->>>>>>> 33af846f7e9f0b7b2946c36ebcb51dae4a2cb56a
+
       const ps = new window.kakao.maps.services.Places();
       const keyword = searchedPlace;
 
@@ -97,19 +91,7 @@ const Map = ({ onCoordinatesUpdate }) => {
 
   return (
     <div>
-<<<<<<< HEAD
-      <div>
-        <input
-          type="text"
-          placeholder="장소를 검색하세요"
-          onChange={(e) => setSearchedPlace(e.target.value)}
-        />
-      </div>
-      <div id="map" style={{ width: '500px', height: '400px' }}></div>
-    </div>
-  );
-}
-=======
+
       <input
         type="text"
         placeholder="장소를 검색하세요"
@@ -124,6 +106,5 @@ const Box = styled.div`
   width: 100%;
   height: 100%;
 `;
->>>>>>> 33af846f7e9f0b7b2946c36ebcb51dae4a2cb56a
 
 export default Map;
