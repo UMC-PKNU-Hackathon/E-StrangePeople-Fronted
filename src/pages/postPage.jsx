@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import postArticle from '../apis/api/article';
 
 export default function PostPage() {
-<<<<<<< HEAD
+  const [coordinatesUpdate,onCoordinatesUpdate] = useState();
   const [articleData, setArticleData] = useState({
     RouteCreateRequests: [
       {
@@ -55,32 +55,26 @@ export default function PostPage() {
     } catch (error) {
       console.error('Error posting article:', error);
       // Add error handling logic or provide user feedback
-    }
-=======
-  const [coordinates, setCoordinates] = useState({ latitude: 0, longitude: 0 });
+    }}
 
-  const handleCoordinatesUpdate = (newCoordinates) => {
-    console.log('좌표값이 업데이트되었습니다:', newCoordinates);
-    setCoordinates(newCoordinates);
-    
->>>>>>> 33af846f7e9f0b7b2946c36ebcb51dae4a2cb56a
-  };
+    const [coordinates, setCoordinates] = useState({ latitude: 0, longitude: 0 });
+
+    const handleCoordinatesUpdate = (newCoordinates) => {
+      console.log('좌표값이 업데이트되었습니다:', newCoordinates);
+      setCoordinates(newCoordinates);
+  
+    };
 
   return (
-    <PostBox>
-      <Wrapper>
-<<<<<<< HEAD
-        <Map updateAddress={updateAddress} />
-=======
-        <Map onCoordinatesUpdate={handleCoordinatesUpdate} />
->>>>>>> 33af846f7e9f0b7b2946c36ebcb51dae4a2cb56a
-      </Wrapper>
-
-      <Container>
-        <Post updatePostData={updatePostData} />
-        <button onClick={handlePostArticle}>Post Article</button>
-      </Container>
-    </PostBox>
+<PostBox>
+  <Wrapper>
+    <Map onCoordinatesUpdate={handleCoordinatesUpdate}  />
+  </Wrapper>
+  <Container>
+    <Post updatePostData={updatePostData} />
+    <button onClick={handlePostArticle}>Post Article</button>
+  </Container>
+</PostBox>
   );
 }
 

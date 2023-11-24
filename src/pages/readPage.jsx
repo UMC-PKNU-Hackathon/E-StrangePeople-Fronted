@@ -23,10 +23,13 @@ export default function ReadPage() {
         console.error('Error fetching article detail:', error);
       });
   }, []); // Empty dependency array to run the effect only once on mount
+
+  const routeAddress = articleDetail?.RouteAddressResponse || {};
+  const { x, y } = routeAddress;
   return (
     <PostBox>
       <Wrapper>
-        <TravelLoad></TravelLoad>
+        <TravelLoad  x={x} y={y} ></TravelLoad>
       </Wrapper>
 
       <Container>

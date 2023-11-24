@@ -1,10 +1,8 @@
 import axiosInstance from "../utils";
 
-import axios from 'axios';
-
 const getArticleDetail = async (articleId) => {
   try {
-    const response = await axios.get(`/article/detail?id=${articleId}`);
+    const response = await axiosInstance.get(`/article/detail?id=${articleId}`);
     
     // 응답 구조가 예상 형식과 일치한다고 가정합니다.
     const postDetail = response.data.PostDetailResponse;
