@@ -8,11 +8,18 @@ import Map from '../components/map/Map';
 import styled from 'styled-components';
 
 export default function PostPage() {
+  const [coordinates, setCoordinates] = useState({ latitude: 0, longitude: 0 });
+
+  const handleCoordinatesUpdate = (newCoordinates) => {
+    console.log('좌표값이 업데이트되었습니다:', newCoordinates);
+    setCoordinates(newCoordinates);
+    
+  };
 
   return (
-    <PostBox> 
-            <Wrapper>
-            <Map></Map>
+    <PostBox>
+      <Wrapper>
+        <Map onCoordinatesUpdate={handleCoordinatesUpdate} />
       </Wrapper>
       
       <Container>
