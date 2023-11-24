@@ -33,7 +33,9 @@ export default function SearchResult() {
           <S.IconImage src={searchIcon} alt="Search" onClick={onClickBtn} />
         </S.ImageButton>
       </div>
-      <S.SearchResultText>"{location.search}"에 대한 검색결과입니다</S.SearchResultText>
+      <S.SearchResultText>
+        "{decodeURIComponent(location.pathname.split('/').pop())}"에 대한 검색결과입니다
+      </S.SearchResultText>
     </S.AppContainer>
   );
 }

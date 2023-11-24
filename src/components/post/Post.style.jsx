@@ -18,7 +18,12 @@ export const TitleContainer = styled.div`
   align-items: center;
 `;
 
-export const Title = styled.input`
+export const ContentContainer = styled.div`
+  align-items: center;
+  margin:20px;
+`;
+
+export const InputTitle = styled.input`
   flex: 1;
   width: 80%;
   padding: 10px;
@@ -43,11 +48,44 @@ export const Button = styled.button`
   }
 `;
 
-export const Content = styled.input`
+export const Title = styled.h1`
+  flex: 1;
+  width: 80%;
+  font-size: 30px;
+  font-weight: bold;
+`;
+
+export const Content = styled.div`
   width: 90%;
   height: 80vh;
   padding: 10px;
   margin: 10px;
   font-size: 16px;
   border: none;
+`;
+
+export const MetaContainer = styled.div`
+  margin:20px;
+`;
+
+export const Author = styled.span`
+  font-weight:bold;
+  margin-right:20px;
+`;
+
+export const Date = styled.span`
+color: #68A1C5;`
+
+export const Detail = styled.span`
+margin-left:10px
+`
+
+export const Icon = styled.img`
+height: 25px;
+`;
+
+export const Divider = styled.hr`
+  width: 95%;
+  margin-top: 10px;
+  border: 0.5px solid #ccc;
 `;
